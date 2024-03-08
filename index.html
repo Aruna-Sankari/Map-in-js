@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Map Tasks</title>
+</head>
+<body>
+<ul id="f">
+</ul>
+<script>
+<!--convert celsius to fahrenheit-->
+const celsius=[25,30,15,10];
+const fahrenheit=celsius.map(fah=>fah*(9/5)+32);
+console.log(fahrenheit);
+<!----end-->
+const t=celsius.map(e=>e*e);
+console.log(t);
+</script>
+<script>
+<!--modify array elements into a uppercase-->
+let words=["bag","torchlight","egg","bottle","pencil"];
+let a=words.map(function(e){
+return e.toUpperCase();
+});
+console.log(a);
+<!--end-->
+</script>
+<script>
+<!--filter the even number and map the values into square-->
+const num=[2,7,9,10,14];
+const b1=num.filter(even=>even%2==0);
+const c=b1.map(square=>square**2);
+console.log(c);
+<!--end-->
+</script>
+<script>
+<!---combine two array--->
+const fruits=["apple","mango","orange","grapes","guava"];
+const colors=["red","yellow","orange","black","green"];
+const d=fruits.map(function(g,index){
+return[g,colors[index]];
+});
+console.log(d);
+<!----end---->
+</script>
+<script>
+<!---to print the list using dom---->
+const person=[{name:"subi",age:21},
+{name:"nandhini",age:16},
+{name:"valli",age:45},
+{name:"aathi",age:34},
+{name:"biju",age:56}];
+const e=person.filter(pers=>pers.age>34);
+const f=e.map(pers=>pers.age**2);
+console.log(e);
+console.log(f);
+let b=document.getElementById("f");
+for(let x in e){
+let c=document.createElement("li");
+c.innerHTML=Object.entries(e[x]);
+b.appendChild(c);
+}
+<!----end---->
+</script>
+<script>
+const x = [1, 2, 3, 4, 5];
+
+const y = x.find(z => z  * 2 === 2);
+
+console.log("y is: ", y); 
+
+const u= [1, 2, 3, 4, 5];
+
+const l = u.filter(z => z * 2 === 2);
+
+console.log("l is: ", l); 
+
+const emp = [
+    {
+        name: "Mark",
+        empID: 101
+    },
+    {
+        name: "Steve",
+        empID: 101
+    },
+    {
+        name: "Mark",
+        empID: 103
+    }
+];
+const res = emp.find(employee => employee.empID === 101);
+
+console.log("res is: ", res); // res is: {name: 'Steve', empID: 102}
+
+</script>
+</body>
+</html>
